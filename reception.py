@@ -1,14 +1,24 @@
+import cv2 as cv
 import pyttsx3
-speech = pyttsx3.init()
-speech.setProperty("rate", 150)
+
+
 def reception():
-    print("WELCOME")
-    print("Your Health is our Priority")
-    speech.say("WELCOME")
-    speech.runAndWait()
+    print('1. Map of the Hospital')
+    print('2. How may i help you Today? ')
+    ch = input('What do you want to do?')
+    print("\n--------------------------------------------\n")
+    
+    if(ch == '1'):
+        img = cv.imread('map_hospital.jpg',1)
+        cv.imshow('image',img)
 
-    speech.say("Your Health is our Priority")
-    speech.runAndWait()
+    elif(ch == '2'):  
+        speech.say("How may i help you today?")
+        speech.runAndWait()
+        ch2 = input('How may I help you Today?')
 
-    speech.say("How may i help you today?")
-    speech.runAndWait()
+    else:
+        print("Wrong Input")
+        print("\n--------------------------------------------\n")
+
+    reception()

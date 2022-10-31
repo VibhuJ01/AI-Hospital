@@ -14,6 +14,11 @@ def afterlogin():
     print("\n--------------------------------------------\n")
 
     if(ch == '1'):
+        speech = pyttsx3.init()
+        speech.setProperty("rate", 150)
+        print("WELCOME")
+        print("Your Health is our Priority")
+        print("\n--------------------------------------------\n")
         reception()
     
     elif(ch == '2'):
