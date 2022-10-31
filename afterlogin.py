@@ -1,4 +1,4 @@
-
+from reception import reception
 def afterlogin():
 
     print('1. Reception')
@@ -14,7 +14,7 @@ def afterlogin():
     print("\n--------------------------------------------\n")
 
     if(ch == '1'):
-        pass
+        reception()
     
     elif(ch == '2'):
         pass
@@ -27,3 +27,5 @@ def afterlogin():
         print("\n--------------------------------------------\n")
 
     afterlogin()
+
+              
