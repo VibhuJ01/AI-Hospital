@@ -1,4 +1,6 @@
 from reception import reception
+import pyttsx3
+
 def afterlogin():
 
     print('1. Reception')
@@ -16,7 +18,7 @@ def afterlogin():
     if(ch == '1'):
         speech = pyttsx3.init()
         speech.setProperty("rate", 150)
-        print("WELCOME")
+        print("Welcome")
         print("Your Health is our Priority")
         print("\n--------------------------------------------\n")
         reception()
