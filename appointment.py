@@ -1,10 +1,15 @@
+import mysql.connector as ms
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
+cur1 = mycon.cursor()
 
-
+import pyttsx3
+speech = pyttsx3.init()
+speech.setProperty("rate", 150)
 
 
 def appointment(doctor,a):
 
-    if(a == 1)
+    if(a == 1):
         print(' 1. CARDIOLOGIST')    
         print(' 2. RADIOLOGIST')    
         print(' 3. OPHTHALMOLOGIST')   
@@ -20,9 +25,73 @@ def appointment(doctor,a):
         print('13. ONCOLOGIST')      
         print('14. NEUROLOGIST')
         print('15. GENERAL PHYSICIAN')
+        print('16. BACK')
         ch2 = input('Pick your specialist: ')
+        print("\n--------------------------------------------\n")
+
 
         if(ch2 == '1'):
             doctor = 'cardiologist'
 
         elif(ch2 == '2'):
+            doctor = 'radiologist'
+
+        elif(ch2 == '3'):
+            doctor = 'opthalmologist'
+
+        elif(ch2 == '4'):
+            doctor = 'dentist'
+
+        elif(ch2 == '5'):
+            doctor = 'ent_specialist'
+
+        elif(ch2 == '6'):
+            doctor = 'gynecologist'
+
+        elif(ch2 == '7'):
+            doctor = 'orthopedic'
+
+        elif(ch2 == '8'):
+            doctor = 'pediatrician'
+
+        elif(ch2 == '9'):
+            doctor = 'psychiatrist'
+
+        elif(ch2 == '10'):
+            doctor = 'pulmonologist'
+
+        elif(ch2 == '11'):
+            doctor = 'endocrinologist'
+
+        elif(ch2 == '12'):
+            doctor = 'dermatologist'
+
+        elif(ch2 == '13'):
+            doctor = 'oncologist'
+
+        elif(ch2 == '14'):
+            doctor = 'neurologist'
+        
+
+        elif(ch2 == '15'):
+            doctor = 'general physician'
+            
+        else:
+            print("Wrong Input")
+            print("\n--------------------------------------------\n")
+            return 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
