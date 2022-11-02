@@ -10,8 +10,8 @@ speech.setProperty("rate", 150)
 def appointment(doctor,a):
 
     if(a == 1):
-        print(' 1. CARDIOLOGIST')    
-        print(' 2. RADIOLOGIST')    
+        print(' 1. Cardiologist')    
+        print(' 2. Radiologist')    
         print(' 3. OPHTHALMOLOGIST')   
         print(' 4. DENTIST')     
         print(' 5. ENT_SPECIALIST')  
@@ -25,7 +25,7 @@ def appointment(doctor,a):
         print('13. ONCOLOGIST')      
         print('14. NEUROLOGIST')
         print('15. GENERAL PHYSICIAN')
-        print('16. BACK')
+        print('16. Back')
         ch2 = input('Pick your specialist: ')
         print("\n--------------------------------------------\n")
 
@@ -75,14 +75,17 @@ def appointment(doctor,a):
 
         elif(ch2 == '15'):
             doctor = 'general physician'
+
+        elif(ch2 == '16'):
+            return
             
         else:
             print("Wrong Input")
             print("\n--------------------------------------------\n")
-            return 
+            appointment(doctor,1)
 
 
-
+    
 
 
 

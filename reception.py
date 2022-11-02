@@ -99,7 +99,7 @@ def booking(doctor):
     if(ch == '1'):
         appointment(doctor,0)
 
-    elif(ch == '2')
+    elif(ch == '2'):
         doctor = appointment('No One',1)
         
 
