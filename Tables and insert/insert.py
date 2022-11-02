@@ -2,32 +2,15 @@ import mysql.connector as ms
 mycon=ms.connect(host="localhost",user="root",db="medic",passwd="vibhu")
 cur1 = mycon.cursor()
 
-def keyword():
-
-    sql = '''create table keywords (
-             S_no int PRIMARY KEY AUTO_INCREMENT,
-             keywords varchar(20),
-             types_of_doctors varchar(20)
-             );'''
-
-    cur1.execute(sql)
-    mycon.commit()
-    
 def keyword_insert():
     
-    sql = """INSERT INTO keywords VALUES(1, 'heart','cardiologist');
-            INSERT INTO keywords VALUES(2, 'cardiovascular','cardiologist');
-            INSERT INTO keywords VALUES(3, 'cardiac','cardiologist');
-            INSERT INTO keywords VALUES(4, 'chest pain','cardiologist');
-            INSERT INTO keywords VALUES(5, 'scan', 'radiologist');
-            INSERT INTO keywords VALUES(6, 'ultrasound', 'radiologist');
-            INSERT INTO keywords VALUES(7, 'x-ray', 'radiologist');
-            INSERT INTO keywords VALUES(8, 'MRI', 'radiologist');
-            INSERT INTO keywords VALUES(9, 'eye', 'ophthalmologist');
-            INSERT INTO keywords VALUES(10, 'vision', 'ophthalmologist');
-            INSERT INTO keywords VALUES(11, 'stye', 'ophthalmologist');
-            INSERT INTO keywords VALUES(12, 'cataract', 'ophthalmologist');
-            INSERT INTO keywords VALUES(13, 'blurry', 'ophthalmologist');
+    sql = '''INSERT INTO keywords VALUES(1, 'heart','cardiologist'),
+            (2, 'cardiovascular','cardiologist'),(3, 'cardiac','cardiologist'),
+            (4, 'chest pain','cardiologist'),(5, 'scan', 'radiologist'),
+            (6, 'ultrasound', 'radiologist'),(7, 'x-ray', 'radiologist'),
+            (8, 'MRI', 'radiologist'),(9, 'eye', 'ophthalmologist'),
+            (10, 'vision', 'ophthalmologist'),(11, 'stye', 'ophthalmologist'),
+            (12, 'cataract', 'ophthalmologist'),(13, 'blurry', 'ophthalmologist');
             INSERT INTO keywords VALUES(14, 'conjunctivitis', 'ophthalmologist');
             INSERT INTO keywords VALUES(15, 'see', 'ophthalmologist');
             INSERT INTO keywords VALUES(16, 'watch', 'ophthalmologist');
@@ -90,11 +73,32 @@ def keyword_insert():
             INSERT INTO keywords VALUES(73, 'braces', 'Dentist');
             INSERT INTO keywords VALUES(74, 'pregnant', 'gynecologist');
             INSERT INTO keywords VALUES(75, 'hairline', 'orthopedic');
-            INSERT INTO keywords VALUES(76, 'heartache', 'cardiologist');"""
+            INSERT INTO keywords VALUES(76, 'heartache', 'cardiologist');'''
+
+    cur1.execute(sql)
+    mycon.commit()
+    
+def doctor_names_insert():
+
+    sql = '''INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('cardiologist' , 'Dr. Vivek Jawali', 'Dr. Ramakant Panda');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('radiologist' , 'Dr. R Suresh Kumar', 'Dr. Chenna Krishna Reddy');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('ophthalmologist' , 'Dr. Sanjay Chaudhary', 'Dr. Atul Kumar');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('dentist' , 'Dr. Satyavrat Arya', 'Dr. Arun Setia');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('ent_Specialist' , 'Dr. E.V. Raman', 'Dr. Rajiv Khanna');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('gynecologist' , 'Dr. Rajiv Khanna', 'Dr. E.V. Raman');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('orthopedic' , 'Dr. Anil Arora', 'Dr. Deepak Sharan');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('pediatrician' , 'Dr. Vivek Rege', 'Dr. Hitesh Pant');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('psychiatrist' , 'Dr. Parmanand Kulhara', 'Dr. Brahm Kapur');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('Dermatologist' , 'Dr. Ramji Gupta', 'Dr. Gopi Maddali');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('pulmonologist' , 'Dr. Ashok Rajput', 'Dr. Bala Chandran');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('endocrinologist' , 'Dr. Sharma Manuj', 'Dr. Shrivastava Abhishek');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('oncologist' , 'Dr. Rahul Bhargava', 'Dr. Vinod Raina');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('neurologist' , 'Dr. Atma Ram Bansal', 'Dr. Sandeep Vaishya');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('general physician' , 'Dr. Ashutosh Shukla', 'Dr. P.k.d. Shah');'''
 
     cur1.execute(sql)
     mycon.commit()
 
-keyword_insert()
+doctor_names_insert()    
 print('Done')
 mycon.close()

@@ -23,7 +23,8 @@ def reception():
         print('How may I help you Today?')
         speech.say("How may i help you today?")
         speech.runAndWait()
-        preprocessing()
+        doctor = preprocessing()
+        appointment(doctor)
         
     elif(ch == '3'):
         outpass = 'D'
@@ -79,7 +80,31 @@ def preprocessing():
     else:
         doctor = 'general physician'
 
+    return doctor
+
+
+def appointment(doctor):
+
+    print('I think you should go to ' + doctor)
+    speech.say('I think you should go to ' + doctor)
+    speech.runAndWait()
+    print("\n--------------------------------------------\n")
     
-    print(doctor)
-    
+    print('1. To book appointment for '+ doctor)
+    print('2. Show all the available Specialist')
+    print('1. CARDIOLOGIST')    
+    print('2.  RADIOLOGIST')    
+    print('3. OPHTHALMOLOGIST')   
+    print('4. DENTIST')     
+    print('5. ENT_SPECIALIST')  
+    print('6.GYNECOLOGIST')
+    print('7. ORTHOPEDIC')   
+    print('8. PEDIATRICIAN')  
+    print('9. PSYCHIATRIST')   
+    print('10. PULMONOLOGIST')  
+    print('11. ENDOCRINOLOGIST') 
+    print('12. DERMATOLOGIST')  
+    print('13. ONCOLOGIST')      
+    print('14. NEUROLOGIST')
+    print('15. GENERAL PHYSICIAN') 
    
