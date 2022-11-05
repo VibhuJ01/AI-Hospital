@@ -3,7 +3,6 @@ mycon=ms.connect(host="localhost",user="root",db="medic",passwd="vibhu")
 cur1 = mycon.cursor()
 
 def keyword():
-
     sql = '''create table keywords (
              S_no int PRIMARY KEY AUTO_INCREMENT,
              keywords varchar(20),
@@ -15,7 +14,6 @@ def keyword():
     
 
 def doctor_names():
-
     sql = '''create table doctor_names (
              S_no int PRIMARY KEY AUTO_INCREMENT,
              speciality varchar(20),
@@ -26,10 +24,6 @@ def doctor_names():
     cur1.execute(sql)
     mycon.commit()
 
-
-
-    
-doctor_names()
 
 print('Done')
 mycon.close()
