@@ -99,6 +99,40 @@ def doctor_names_insert():
     cur1.execute(sql)
     mycon.commit()
 
+def daily_insert():
+    sql='''insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Vivek Jawali','cardiologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Ramakant Panda','cardiologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. R Suresh Kumar','radiologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr Chenna Krishna Reddy','radiologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Sanjay Chaudhary','ophthalmologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Atul Kumar','ophthalmologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Satyavrat Arya','dentist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Arun Setia','dentist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. E.V. Raman','ent_specialist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Rajiv Khanna','ent_specialist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Rajiv Khanna','gyanecologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. E.V. Raman','gyanecologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Anil Arora','orthopedic',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Deepak Sharan','orthopedic',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Vivek Rege','pediatrician',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Hitesh Pant','pediatrician',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Parmanand Kulhara','psychiatrist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Brahm Kapur','psychiatrist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Ramji Gupta','dermatologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Gopi Maddali','dermatologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Ashok Rajput','pulmonologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Bala Chandran','pulmonologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Sharma Manuj','endocrinologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Shrivastava Abhishek','endocrinologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Rahul Bhargava','oncologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Vinod Raina','oncologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Atma Ram Bansal','neurologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Sandeep Vaishya','neurologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Ashutosh Shukla','general physician',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. P.k.d. Shah','general physician',0,0);
+            '''
+    cur1.execute(sql)
+    mycon.commit()
 doctor_names_insert()    
 print('Done')
 mycon.close()
