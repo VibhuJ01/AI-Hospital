@@ -103,7 +103,7 @@ def daily_insert():
     sql='''insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Vivek Jawali','cardiologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Ramakant Panda','cardiologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. R Suresh Kumar','radiologist',0,0);
-            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr Chenna Krishna Reddy','radiologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Chenna Krishna Reddy','radiologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Sanjay Chaudhary','ophthalmologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Atul Kumar','ophthalmologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Satyavrat Arya','dentist',0,0);
@@ -133,6 +133,7 @@ def daily_insert():
             '''
     cur1.execute(sql)
     mycon.commit()
-doctor_names_insert()    
+    
+daily_insert()    
 print('Done')
 mycon.close()

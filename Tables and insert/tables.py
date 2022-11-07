@@ -40,6 +40,18 @@ def record():
     cur1.execute(sql)
     mycon.commit()
 
+def daily():
+    sql = '''create table daily ( 
+            Serial_no int primary key auto_increment,
+            name varchar(50) not null,
+            speciality varchar(20) not null,
+            tot_appoint int not null,
+            cur_patient int not null
+            );'''
+    
+    cur1.execute(sql)
+    mycon.commit()
 
+daily() 
 print('Done')
 mycon.close()

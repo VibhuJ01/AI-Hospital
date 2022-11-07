@@ -1,3 +1,4 @@
+from tabulate import tabulate
 import datetime as dt
 x = dt.datetime.now()
 
@@ -15,19 +16,19 @@ def appointment(doctor,a):
     if(a == 1):
         print(' 1. Cardiologist')    
         print(' 2. Radiologist')    
-        print(' 3. OPHTHALMOLOGIST')   
-        print(' 4. DENTIST')     
-        print(' 5. ENT_SPECIALIST')  
-        print(' 6. GYNECOLOGIST')
-        print(' 7. ORTHOPEDIC')   
-        print(' 8. PEDIATRICIAN')  
-        print(' 9. PSYCHIATRIST')   
-        print('10. PULMONOLOGIST')  
-        print('11. ENDOCRINOLOGIST') 
-        print('12. DERMATOLOGIST')  
-        print('13. ONCOLOGIST')      
-        print('14. NEUROLOGIST')
-        print('15. GENERAL PHYSICIAN')
+        print(' 3. Ophthalmologist')   
+        print(' 4. Dentist')     
+        print(' 5. Ent_Specialist')  
+        print(' 6. Gynaecologist')
+        print(' 7. Orhtopedic')   
+        print(' 8. PediatricianN')  
+        print(' 9. Psychiatrist')   
+        print('10. Pulmonologist')  
+        print('11. Endocrinologist') 
+        print('12. Dermatolosist')  
+        print('13. Oncologist')      
+        print('14. Neurologist')
+        print('15. General Physician')
         print('16. Back')
         ch2 = input('Pick your specialist: ')
         print("\n--------------------------------------------\n")
@@ -92,19 +93,23 @@ def appointment(doctor,a):
     cur1.execute(sql,data)
     result = cur1.fetchall()
 
-    # Print number of appointments and
-    #the current patient number that is going on
+    sql = 'select name,speciality,tot_appoint,cur_patient from daily where name = %s or name = %s'
+    data = [result[0][2],result[0][3]]
+    cur1.execute(sql,data)
+    result = cur1.fetchall()
+    
     while(True):
-        print('Following doctors have specialisation in',doctor)
-        print('1. ',result[0][2])
-        print('2. ',result[0][3])
-        ch = input('Which doctor do you want? ')
+        print('Following doctors have specialisation in',doctor,'->')
+        keys = ['Name','Speciality','Total Appointments','Current Patients']
+        print(tabulate(result, headers = keys, tablefmt = 'pretty',showindex = False))
+        ch = input('Which doctor do you want?(1/2) ')
+        
         if(ch == '1'):
-            special = result[0][2]
+            special = result[0][0]
             break
 
         elif(ch == '2'):
-            special = result[0][3]
+            special = result[0][1]
             break
 
         else:
@@ -181,7 +186,13 @@ def record(doctor,special):
     cur1.execute(sql,data)
     mycon.commit()
 
+    sql = '''update daily
+             set tot_appoint = tot_appoint + 1
+             where name = %s'''
+    data = [special]
+    cur1.execute(sql,data)
+    mycon.commit()
+    
     print('Appointment is Successfully Made')
-
 
     
