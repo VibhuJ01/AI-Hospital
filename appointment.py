@@ -1,3 +1,6 @@
+import datetime as dt
+x = dt.datetime.now()
+
 import mysql.connector as ms
 mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
 cur1 = mycon.cursor()
@@ -83,9 +86,96 @@ def appointment(doctor,a):
             print("Wrong Input")
             print("\n--------------------------------------------\n")
             appointment(doctor,1)
+            
+    sql = 'select * from doctor_names where speciality = %s'
+    data = [doctor]
+    cur1.execute(sql,data)
+    result = cur1.fetchall()
+
+    # Print number of appointments and
+    #the current patient number that is going on
+    while(True):
+        print('Following doctors have specialisation in',doctor)
+        print('1. ',result[0][2])
+        print('2. ',result[0][3])
+        ch = input('Which doctor do you want? ')
+        if(ch == '1'):
+            special = result[0][2]
+            break
+
+        elif(ch == '2'):
+            special = result[0][3]
+            break
+
+        else:
+            print('Wrong Input')
+            print("\n--------------------------------------------\n")
+            
+    print("\n--------------------------------------------\n")
+    daily(doctor,special)
 
 
-    
+def daily(doctor,special):
+
+    while(True):
+        f_name = input("Enter patient's First name: ")
+        l_name = input("Enter patient's Last name: ")
+        print("\n--------------------------------------------\n")
+        print("Patient's Full Name: "+f_name+" "+l_name)
+        print("\n--------------------------------------------\n")
+        ch = input('Is your Name correct?(y/n) ')
+        print("\n--------------------------------------------\n")
+        if(ch.lower() == 'y'):
+            break
+
+    while(True):
+        try:
+            age = int(input("Enter patient's age: "))
+            print("\n--------------------------------------------\n")
+            if(age > 130):
+                print('Invalid Age')
+                print("\n--------------------------------------------\n")
+                continue
+
+        except:
+            print("\n--------------------------------------------\n")
+            print('Wrong Input, Try Again')
+            print("\n--------------------------------------------\n")
+
+        else:
+            print("Patient's age is: ",age)
+            print("\n--------------------------------------------\n")
+            ch = input('Is your Age correct?(y/n) ')
+            print("\n--------------------------------------------\n")
+            if(ch.lower() == 'y'):
+                break
+            
+    date = str(x.day) + '-' + str(x.month) + '-' + str(x.year)
+    time = str(x.hour) + ':' + str(x.minute) + ':' + str(x.second)
+
+
+    while(True):
+        try:
+            c_code = int(input("Enter your country code +"))
+            phone_no = input("Enter your phone_no: ")
+            print("\n--------------------------------------------\n")
+
+        except:
+            print("\n--------------------------------------------\n")
+            print('Wrong Input, Try Again')
+            print("\n--------------------------------------------\n")
+
+        else:
+            phone_no = '+' + str(c_code) + str(phone_no)
+            print("Patient's Phone Number is:",phone_no)
+            print("\n--------------------------------------------\n")
+            ch = input('Is your Phone Number correct?(y/n) ')
+            print("\n--------------------------------------------\n")
+            if(ch.lower() == 'y'):
+                break
+            
+
+
 
 
 
