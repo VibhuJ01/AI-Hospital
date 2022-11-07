@@ -112,10 +112,10 @@ def appointment(doctor,a):
             print("\n--------------------------------------------\n")
             
     print("\n--------------------------------------------\n")
-    daily(doctor,special)
+    record(doctor,special)
 
 
-def daily(doctor,special):
+def record(doctor,special):
 
     while(True):
         f_name = input("Enter patient's First name: ")
@@ -175,16 +175,13 @@ def daily(doctor,special):
                 break
             
 
+    sql = '''insert into record(f_name,l_name,age,phone_no,spec,spec_name,date,time)
+            values(%s,%s,%s,%s,%s,%s,%s,%s)'''
+    data = [f_name,l_name,age,phone_no,special,doctor,date,time]
+    cur1.execute(sql,data)
+    mycon.commit()
+
+    print('Appointment is Successfully Made')
 
 
-
-
-
-
-
-
-
-
-
-
-            
+    

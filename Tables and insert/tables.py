@@ -24,6 +24,22 @@ def doctor_names():
     cur1.execute(sql)
     mycon.commit()
 
+def record():
+    sql = '''Create table record(
+            serial_no int primary key auto_increment,
+            F_Name varchar(50) not null,
+            L_Name varchar(50) not null,
+            Age int not null,
+            Phone_no varchar(20) not null,
+            Spec varchar(50) not null,
+            Spec_name varchar(50) not null,
+            Date varchar(10) not null,
+            Time varchar(20) not null
+            )'''
+    
+    cur1.execute(sql)
+    mycon.commit()
+
 
 print('Done')
 mycon.close()
