@@ -50,7 +50,7 @@ def appointment(doctor,a):
             doctor = 'ent_specialist'
 
         elif(ch2 == '6'):
-            doctor = 'gynecologist'
+            doctor = 'gynaecologist'
 
         elif(ch2 == '7'):
             doctor = 'orthopedic'
@@ -93,8 +93,8 @@ def appointment(doctor,a):
     cur1.execute(sql,data)
     result = cur1.fetchall()
 
-    sql = 'select name,speciality,tot_appoint,cur_patient from daily where name = %s or name = %s'
-    data = [result[0][2],result[0][3]]
+    sql = 'select name,speciality,tot_appoint,cur_patient from daily where speciality = %s'
+    data = [doctor]
     cur1.execute(sql,data)
     result = cur1.fetchall()
     
@@ -180,8 +180,9 @@ def record(doctor,special):
                 break
             
 
-    sql = '''insert into record(f_name,l_name,age,phone_no,spec,spec_name,date,time)
-            values(%s,%s,%s,%s,%s,%s,%s,%s)'''
+    sql = '''insert into record
+            (f_name,l_name,age,phone_no,spec,spec_name,date,time)
+             values(%s,%s,%s,%s,%s,%s,%s,%s)'''
     data = [f_name,l_name,age,phone_no,special,doctor,date,time]
     cur1.execute(sql,data)
     mycon.commit()
@@ -194,5 +195,6 @@ def record(doctor,special):
     mycon.commit()
     
     print('Appointment is Successfully Made')
+    print("\n--------------------------------------------\n")
 
     

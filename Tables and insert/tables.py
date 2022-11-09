@@ -52,6 +52,7 @@ def daily():
     cur1.execute(sql)
     mycon.commit()
 
+
 daily() 
 print('Done')
 mycon.close()

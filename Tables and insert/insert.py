@@ -6,74 +6,77 @@ def keyword_insert():
     
     sql = '''INSERT INTO keywords VALUES(1, 'heart','cardiologist'),
             (2, 'cardiovascular','cardiologist'),(3, 'cardiac','cardiologist'),
-            (4, 'chest pain','cardiologist'),(5, 'scan', 'radiologist'),
-            (6, 'ultrasound', 'radiologist'),(7, 'x-ray', 'radiologist'),
-            (8, 'MRI', 'radiologist'),(9, 'eye', 'ophthalmologist'),
-            (10, 'vision', 'ophthalmologist'),(11, 'stye', 'ophthalmologist'),
-            (12, 'cataract', 'ophthalmologist'),(13, 'blurry', 'ophthalmologist');
-            INSERT INTO keywords VALUES(14, 'conjunctivitis', 'ophthalmologist');
-            INSERT INTO keywords VALUES(15, 'see', 'ophthalmologist');
-            INSERT INTO keywords VALUES(16, 'watch', 'ophthalmologist');
-            INSERT INTO keywords VALUES(17, 'tooth', 'dentist');
-            INSERT INTO keywords VALUES(18, 'teeth', 'dentist');
-            INSERT INTO keywords VALUES(19, 'eat', 'dentist');
-            INSERT INTO keywords VALUES(20, 'gums', 'dentist');
-            INSERT INTO keywords VALUES(21, 'cavities', 'dentist');
-            INSERT INTO keywords VALUES(22, 'taste', 'ent_Specialist');
-            INSERT INTO keywords VALUES(23, 'hear', 'ent_Specialist');
-            INSERT INTO keywords VALUES(24, 'ear', 'ent_Specialist');
-            INSERT INTO keywords VALUES(25, 'smell', 'ent_Specialist');
-            INSERT INTO keywords VALUES(26, 'nose', 'ent_Specialist');
-            INSERT INTO keywords VALUES(27, 'throat', 'ent_Specialist');
-            INSERT INTO keywords VALUES(28, 'swallow', 'ent_Specialist');
-            INSERT INTO keywords VALUES(29, 'tonsils', 'ent_Specialist');
-            INSERT INTO keywords VALUES(30, 'uterus', 'gynecologist');
-            INSERT INTO keywords VALUES(31, 'periods', 'gynecologist');
-            INSERT INTO keywords VALUES(32, 'baby', 'gynecologist');
-            INSERT INTO keywords VALUES(33, 'child', 'gynecologist');
-            INSERT INTO keywords VALUES(34, 'birth', 'gynecologist');
-            INSERT INTO keywords VALUES(35, 'bone', 'orthopedic');
-            INSERT INTO keywords VALUES(36, 'fracture', 'orthopedic');
-            INSERT INTO keywords VALUES(37, 'joint', 'orthopedic');
-            INSERT INTO keywords VALUES(38, 'knee', 'orthopedic');
-            INSERT INTO keywords VALUES(39, 'elbow', 'orthopedic');
-            INSERT INTO keywords VALUES(40, 'arthritis', 'orthopedic');
-            INSERT INTO keywords VALUES(41, 'son', 'pediatrician');
-            INSERT INTO keywords VALUES(42, 'daughter', 'pediatrician');
-            INSERT INTO keywords VALUES(43, 'child', 'pediatrician');
-            INSERT INTO keywords VALUES(44, 'baby', 'pediatrician');
-            INSERT INTO keywords VALUES(45, 'mental', 'psychiatrist');
-            INSERT INTO keywords VALUES(46, 'sad', 'psychiatrist');
-            INSERT INTO keywords VALUES(47, 'depression', 'psychiatrist');
-            INSERT INTO keywords VALUES(48, 'pressure', 'psychiatrist');
-            INSERT INTO keywords VALUES(49, 'skin', 'dermatologist');
-            INSERT INTO keywords VALUES(50, 'rash', 'dermatologist');
-            INSERT INTO keywords VALUES(51, 'acne', 'dermatologist');
-            INSERT INTO keywords VALUES(52, 'pimples', 'dermatologist');
-            INSERT INTO keywords VALUES(53, 'allergy', 'dermatologist');
-            INSERT INTO keywords VALUES(54, 'lung', 'pulmonologist');
-            INSERT INTO keywords VALUES(55, 'asthama', 'pulmonologist');
-            INSERT INTO keywords VALUES(56, 'breathe', 'pulmonologist');
-            INSERT INTO keywords VALUES(57, 'bronchitis', 'pulmonologist');
-            INSERT INTO keywords VALUES(58, 'typhoid', 'endocrinologist');
-            INSERT INTO keywords VALUES(59, 'jaundice', 'endocrinologist');
-            INSERT INTO keywords VALUES(60, 'liver', 'endocrinologist');
-            INSERT INTO keywords VALUES(61, 'maligant', 'oncologist');
-            INSERT INTO keywords VALUES(62, 'benign', 'oncologist');
-            INSERT INTO keywords VALUES(63, 'tumor', 'oncologist');
-            INSERT INTO keywords VALUES(64, 'cancer', 'oncologist');
-            INSERT INTO keywords VALUES(65, 'head', 'neurologist');
-            INSERT INTO keywords VALUES(66, 'spine', 'neurologist');
-            INSERT INTO keywords VALUES(67, 'headache', 'neurologist');
-            INSERT INTO keywords VALUES(68, 'nerve', 'neurologist');
-            INSERT INTO keywords VALUES(69, 'vomiting', 'general physician');
-            INSERT INTO keywords VALUES(70, 'fever', 'general physician');
-            INSERT INTO keywords VALUES(71, 'cold', 'general physician');
-            INSERT INTO keywords VALUES(72, 'cough', 'general physician');
-            INSERT INTO keywords VALUES(73, 'braces', 'Dentist');
-            INSERT INTO keywords VALUES(74, 'pregnant', 'gynecologist');
-            INSERT INTO keywords VALUES(75, 'hairline', 'orthopedic');
-            INSERT INTO keywords VALUES(76, 'heartache', 'cardiologist');'''
+            (4, 'heartache', 'cardiologist'),
+            (5, 'chest pain','cardiologist'),(6, 'scan', 'radiologist'),
+            (7, 'ultrasound', 'radiologist'),(8, 'x-ray', 'radiologist'),
+            (9, 'MRI', 'radiologist'),(10, 'eye', 'ophthalmologist'),
+            (11, 'vision', 'ophthalmologist'),(12, 'stye', 'ophthalmologist'),
+            (13, 'cataract', 'ophthalmologist'),(14, 'blurry', 'ophthalmologist');
+            INSERT INTO keywords VALUES(15, 'conjunctivitis', 'ophthalmologist');
+            INSERT INTO keywords VALUES(16, 'see', 'ophthalmologist');
+            INSERT INTO keywords VALUES(17, 'watch', 'ophthalmologist');
+            INSERT INTO keywords VALUES(18, 'tooth', 'dentist');
+            INSERT INTO keywords VALUES(19, 'teeth', 'dentist');
+            INSERT INTO keywords VALUES(20, 'eat', 'dentist');
+            INSERT INTO keywords VALUES(21, 'gums', 'dentist');
+            INSERT INTO keywords VALUES(22, 'cavities', 'dentist');
+            INSERT INTO keywords VALUES(23, 'taste', 'ent_Specialist');
+            INSERT INTO keywords VALUES(24, 'hear', 'ent_Specialist');
+            INSERT INTO keywords VALUES(25, 'ear', 'ent_Specialist');
+            INSERT INTO keywords VALUES(26, 'smell', 'ent_Specialist');
+            INSERT INTO keywords VALUES(27, 'nose', 'ent_Specialist');
+            INSERT INTO keywords VALUES(28, 'throat', 'ent_Specialist');
+            INSERT INTO keywords VALUES(29, 'swallow', 'ent_Specialist');
+            INSERT INTO keywords VALUES(30, 'tonsils', 'ent_Specialist');
+            INSERT INTO keywords VALUES(31, 'uterus', 'gynaecologist');
+            INSERT INTO keywords VALUES(32, 'periods', 'gynaecologist');
+            INSERT INTO keywords VALUES(33, 'baby', 'gynaecologist');
+            INSERT INTO keywords VALUES(34, 'pregnant', 'gynaecologist');
+            INSERT INTO keywords VALUES(35, 'child', 'gynaecologist');
+            INSERT INTO keywords VALUES(36, 'birth', 'gynaecologist');
+            INSERT INTO keywords VALUES(37, 'bone', 'orthopedic');
+            INSERT INTO keywords VALUES(38, 'fracture', 'orthopedic');
+            INSERT INTO keywords VALUES(39, 'joint', 'orthopedic');
+            INSERT INTO keywords VALUES(40, 'knee', 'orthopedic');
+            INSERT INTO keywords VALUES(41, 'hairline', 'orthopedic');
+            INSERT INTO keywords VALUES(42, 'elbow', 'orthopedic');
+            INSERT INTO keywords VALUES(43, 'arthritis', 'orthopedic');
+            INSERT INTO keywords VALUES(44, 'son', 'pediatrician');
+            INSERT INTO keywords VALUES(45, 'daughter', 'pediatrician');
+            INSERT INTO keywords VALUES(46, 'child', 'pediatrician');
+            INSERT INTO keywords VALUES(47, 'baby', 'pediatrician');
+            INSERT INTO keywords VALUES(48, 'mental', 'psychiatrist');
+            INSERT INTO keywords VALUES(49, 'sad', 'psychiatrist');
+            INSERT INTO keywords VALUES(50, 'depression', 'psychiatrist');
+            INSERT INTO keywords VALUES(51, 'pressure', 'psychiatrist');
+            INSERT INTO keywords VALUES(52, 'skin', 'dermatologist');
+            INSERT INTO keywords VALUES(53, 'rash', 'dermatologist');
+            INSERT INTO keywords VALUES(54, 'acne', 'dermatologist');
+            INSERT INTO keywords VALUES(55, 'pimples', 'dermatologist');
+            INSERT INTO keywords VALUES(56, 'allergy', 'dermatologist');
+            INSERT INTO keywords VALUES(57, 'lung', 'pulmonologist');
+            INSERT INTO keywords VALUES(58, 'asthama', 'pulmonologist');
+            INSERT INTO keywords VALUES(59, 'breathe', 'pulmonologist');
+            INSERT INTO keywords VALUES(60, 'bronchitis', 'pulmonologist');
+            INSERT INTO keywords VALUES(61, 'typhoid', 'endocrinologist');
+            INSERT INTO keywords VALUES(62, 'jaundice', 'endocrinologist');
+            INSERT INTO keywords VALUES(63, 'liver', 'endocrinologist');
+            INSERT INTO keywords VALUES(64, 'maligant', 'oncologist');
+            INSERT INTO keywords VALUES(65, 'benign', 'oncologist');
+            INSERT INTO keywords VALUES(66, 'tumor', 'oncologist');
+            INSERT INTO keywords VALUES(67, 'cancer', 'oncologist');
+            INSERT INTO keywords VALUES(68, 'head', 'neurologist');
+            INSERT INTO keywords VALUES(69, 'spine', 'neurologist');
+            INSERT INTO keywords VALUES(70, 'headache', 'neurologist');
+            INSERT INTO keywords VALUES(71, 'nerve', 'neurologist');
+            INSERT INTO keywords VALUES(72, 'vomiting', 'general physician');
+            INSERT INTO keywords VALUES(73, 'fever', 'general physician');
+            INSERT INTO keywords VALUES(74, 'cold', 'general physician');
+            INSERT INTO keywords VALUES(75, 'cough', 'general physician');
+            INSERT INTO keywords VALUES(76, 'braces', 'Dentist');'''
+            
+            
+            
 
     cur1.execute(sql)
     mycon.commit()
@@ -84,8 +87,8 @@ def doctor_names_insert():
             INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('radiologist' , 'Dr. R Suresh Kumar', 'Dr. Chenna Krishna Reddy');
             INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('ophthalmologist' , 'Dr. Sanjay Chaudhary', 'Dr. Atul Kumar');
             INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('dentist' , 'Dr. Satyavrat Arya', 'Dr. Arun Setia');
-            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('ent_Specialist' , 'Dr. E.V. Raman', 'Dr. Rajiv Khanna');
-            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('gynecologist' , 'Dr. Rajiv Khanna', 'Dr. E.V. Raman');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('ent_Specialist' , 'Dr. Anil Kumar', 'Dr. Aman Bhatia');
+            INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('gynaecologist' , 'Dr. Rajiv Khanna', 'Dr. E.V. Raman');
             INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('orthopedic' , 'Dr. Anil Arora', 'Dr. Deepak Sharan');
             INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('pediatrician' , 'Dr. Vivek Rege', 'Dr. Hitesh Pant');
             INSERT INTO doctor_names(speciality, doc_1, doc_2) VALUES('psychiatrist' , 'Dr. Parmanand Kulhara', 'Dr. Brahm Kapur');
@@ -108,10 +111,10 @@ def daily_insert():
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Atul Kumar','ophthalmologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Satyavrat Arya','dentist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Arun Setia','dentist',0,0);
-            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. E.V. Raman','ent_specialist',0,0);
-            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Rajiv Khanna','ent_specialist',0,0);
-            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Rajiv Khanna','gyanecologist',0,0);
-            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. E.V. Raman','gyanecologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Anil Kumar','ent_specialist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Aman Bhatia','ent_specialist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Rajiv Khanna','gynaecologist',0,0);
+            insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. E.V. Raman','gynaecologist',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Anil Arora','orthopedic',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Deepak Sharan','orthopedic',0,0);
             insert into daily(name,speciality,tot_appoint,cur_patient) values('Dr. Vivek Rege','pediatrician',0,0);
