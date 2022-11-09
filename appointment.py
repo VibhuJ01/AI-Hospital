@@ -3,7 +3,7 @@ import datetime as dt
 x = dt.datetime.now()
 
 import mysql.connector as ms
-mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='Shivya6565@')
 cur1 = mycon.cursor()
 
 import pyttsx3

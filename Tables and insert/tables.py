@@ -1,5 +1,5 @@
 import mysql.connector as ms
-mycon=ms.connect(host="localhost",user="root",db="medic",passwd="vibhu")
+mycon=ms.connect(host="localhost",user="root",db="medic",passwd="Shivya6565@")
 cur1 = mycon.cursor()
 
 def keyword():
@@ -52,7 +52,9 @@ def daily():
     cur1.execute(sql)
     mycon.commit()
 
-
+keyword()
+doctor_names()
+record()
 daily() 
 print('Done')
 mycon.close()

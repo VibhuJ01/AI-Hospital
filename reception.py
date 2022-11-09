@@ -6,7 +6,7 @@ speech = pyttsx3.init()
 speech.setProperty("rate", 150)
         
 import mysql.connector as ms
-mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='Shivya6565@')
 cur1 = mycon.cursor()
 
 def reception():
@@ -91,8 +91,14 @@ def booking(doctor):
     print("\n--------------------------------------------\n")
     
     print('1. To book appointment for '+ doctor)
+    speech.say('Press one to book an appointment')
+    speech.runAndWait()
     print('2. Show all the available Specialist')
+    speech.say('Press two to see all the available specialist')
+    speech.runAndWait()
     print('3. Back')
+    speech.say('press three to return to previous page')
+    speech.runAndWait()
     ch = input('What do you want to do? ')
     print("\n--------------------------------------------\n")
     
