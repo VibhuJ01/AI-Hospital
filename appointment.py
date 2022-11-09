@@ -87,11 +87,6 @@ def appointment(doctor,a):
             print("Wrong Input")
             print("\n--------------------------------------------\n")
             appointment(doctor,1)
-            
-    sql = 'select * from doctor_names where speciality = %s'
-    data = [doctor]
-    cur1.execute(sql,data)
-    result = cur1.fetchall()
 
     sql = 'select name,speciality,tot_appoint,cur_patient from daily where speciality = %s'
     data = [doctor]
