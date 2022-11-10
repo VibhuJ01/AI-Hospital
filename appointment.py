@@ -5,7 +5,7 @@ import datetime as dt
 x = dt.datetime.now()
 
 import mysql.connector as ms
-mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='Shivya6565@')
 cur1 = mycon.cursor()
 
 import pyttsx3
@@ -176,11 +176,6 @@ def record(doctor,special):
             if(ch.lower() == 'y'):
                 break
 
-
-    img = cv.imread('QR_code.png',1)
-    cv.imshow('image',img)
-    cv.waitKey(2000)            
-    cv.destroyWindow('image')
     
     sql = '''insert into record
             (f_name,l_name,age,phone_no,spec,spec_name,date,time)
@@ -199,4 +194,47 @@ def record(doctor,special):
     print('Appointment is Successfully Made')
     print("\n--------------------------------------------\n")
 
-appointment('dentist',0)    
+def payment():
+    print('1. Cash Payment')
+    speech.say('Press one for payement in cash')
+    speech.runAndWait()
+    
+    print('2. Online Payment')
+    speech.say('Press two for online payment')
+    speech.runAndWait()
+
+    speech.say('What do you want to do?')
+    speech.runAndWait()
+    ch = input('What do you want to do?(1/2) ')
+    print("\n--------------------------------------------\n")
+    
+    if(ch == '1'):
+        speech.say('Enter payment successful password')
+        speech.runAndWait()
+        pass = input('Enter payment successful password ')
+        print("\n--------------------------------------------\n")
+    
+           if(pass == 'A'):
+               print('Payment Successful')
+               speech.say('payment successful')
+               speech.runAndWait()
+               print("\n--------------------------------------------\n")
+               return 1
+            
+           else:
+               print('Wrong Password. TRY AGAIN!!!')
+               print("\n--------------------------------------------\n")
+               speech.say('wrong password. try again')
+               speech.runAndWait()
+               payment()
+        
+    elif(ch == '2'):
+        img = cv.imread('QR_code.png',1)
+        cv.imshow('image',img)
+        cv.waitKey(2000)            
+        cv.destroyWindow('image')
+        print('Payment Successful')
+        speech.say('payment successful')
+        speech.runAndWait()
+        print("\n--------------------------------------------\n")
+        return 1
