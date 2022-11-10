@@ -1,9 +1,11 @@
+import cv2 as cv
 from tabulate import tabulate
+
 import datetime as dt
 x = dt.datetime.now()
 
 import mysql.connector as ms
-mycon = ms.connect(host='localhost', user='root', db='medic', passwd='Shivya6565@')
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
 cur1 = mycon.cursor()
 
 import pyttsx3
@@ -104,7 +106,7 @@ def appointment(doctor,a):
             break
 
         elif(ch == '2'):
-            special = result[0][1]
+            special = result[1][0]
             break
 
         else:
@@ -173,8 +175,13 @@ def record(doctor,special):
             print("\n--------------------------------------------\n")
             if(ch.lower() == 'y'):
                 break
-            
 
+
+    img = cv.imread('QR_code.png',1)
+    cv.imshow('image',img)
+    cv.waitKey(2000)            
+    cv.destroyWindow('image')
+    
     sql = '''insert into record
             (f_name,l_name,age,phone_no,spec,spec_name,date,time)
              values(%s,%s,%s,%s,%s,%s,%s,%s)'''
@@ -192,4 +199,4 @@ def record(doctor,special):
     print('Appointment is Successfully Made')
     print("\n--------------------------------------------\n")
 
-    
+appointment('dentist',0)    

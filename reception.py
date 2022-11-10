@@ -1,12 +1,11 @@
 from appointment import appointment
-import cv2 as cv
 
 import pyttsx3
 speech = pyttsx3.init()
 speech.setProperty("rate", 150)
         
 import mysql.connector as ms
-mycon = ms.connect(host='localhost', user='root', db='medic', passwd='Shivya6565@')
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
 cur1 = mycon.cursor()
 
 def reception():
@@ -91,7 +90,7 @@ def booking(doctor):
     print("\n--------------------------------------------\n")
     
     print('1. To book appointment for '+ doctor)
-    speech.say('Press one to book an appointment')
+    speech.say('Press one to book an appointment for' + doctor)
     speech.runAndWait()
     print('2. Show all the available Specialist')
     speech.say('Press two to see all the available specialist')
