@@ -5,7 +5,7 @@ import datetime as dt
 x = dt.datetime.now()
 
 import mysql.connector as ms
-mycon = ms.connect(host='localhost', user='root', db='medic', passwd='Shivya6565@')
+mycon = ms.connect(host='localhost', user='root', db='medic', passwd='vibhu')
 cur1 = mycon.cursor()
 
 import pyttsx3
@@ -176,23 +176,25 @@ def record(doctor,special):
             if(ch.lower() == 'y'):
                 break
 
+    success = payment()
     
-    sql = '''insert into record
-            (f_name,l_name,age,phone_no,spec,spec_name,date,time)
-             values(%s,%s,%s,%s,%s,%s,%s,%s)'''
-    data = [f_name,l_name,age,phone_no,special,doctor,date,time]
-    cur1.execute(sql,data)
-    mycon.commit()
+    if(success == 1):
+        sql = '''insert into record
+                (f_name,l_name,age,phone_no,spec,spec_name,date,time)
+                 values(%s,%s,%s,%s,%s,%s,%s,%s)'''
+        data = [f_name,l_name,age,phone_no,doctor,special,date,time]
+        cur1.execute(sql,data)
+        mycon.commit()
 
-    sql = '''update daily
-             set tot_appoint = tot_appoint + 1
-             where name = %s'''
-    data = [special]
-    cur1.execute(sql,data)
-    mycon.commit()
-    
-    print('Appointment is Successfully Made')
-    print("\n--------------------------------------------\n")
+        sql = '''update daily
+                 set tot_appoint = tot_appoint + 1
+                 where name = %s'''
+        data = [special]
+        cur1.execute(sql,data)
+        mycon.commit()
+        
+        print('Appointment is Successfully Made')
+        print("\n--------------------------------------------\n")
 
 def payment():
     print('1. Cash Payment')
@@ -203,6 +205,10 @@ def payment():
     speech.say('Press two for online payment')
     speech.runAndWait()
 
+    print('3. Cancel Appointment')
+    speech.say('Press three to cancel appointment')
+    speech.runAndWait()
+    
     speech.say('What do you want to do?')
     speech.runAndWait()
     ch = input('What do you want to do?(1/2) ')
@@ -211,22 +217,22 @@ def payment():
     if(ch == '1'):
         speech.say('Enter payment successful password')
         speech.runAndWait()
-        pass = input('Enter payment successful password ')
+        pass1 = input('Enter payment successful password ')
         print("\n--------------------------------------------\n")
     
-           if(pass == 'A'):
-               print('Payment Successful')
-               speech.say('payment successful')
-               speech.runAndWait()
-               print("\n--------------------------------------------\n")
-               return 1
+        if(pass1 == 'A'):
+            print('Payment Successful')
+            speech.say('payment successful')
+            speech.runAndWait()
+            print("\n--------------------------------------------\n")
+            return 1
             
-           else:
-               print('Wrong Password. TRY AGAIN!!!')
-               print("\n--------------------------------------------\n")
-               speech.say('wrong password. try again')
-               speech.runAndWait()
-               payment()
+        else:
+            print('Wrong Password. TRY AGAIN!!!')
+            print("\n--------------------------------------------\n")
+            speech.say('wrong password. try again')
+            speech.runAndWait()
+            payment()
         
     elif(ch == '2'):
         img = cv.imread('QR_code.png',1)
@@ -238,3 +244,6 @@ def payment():
         speech.runAndWait()
         print("\n--------------------------------------------\n")
         return 1
+
+    elif(ch == '3'):
+        return 0
