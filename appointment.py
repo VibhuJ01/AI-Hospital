@@ -13,6 +13,9 @@ speech = pyttsx3.init()
 speech.setProperty("rate", 150)
 
 
+
+
+
 def appointment(doctor,a):
 
     if(a == 1):
